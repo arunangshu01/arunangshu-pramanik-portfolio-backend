@@ -1,4 +1,4 @@
-# arunangshu-pramanik-portfolio - Arunangshu Pramanik's Personal Portfolio
+# arunangshu-pramanik-portfolio-backend - Arunangshu Pramanik's Personal Portfolio (Backend Code)
 
 Welcome to my GitHub repository! This repository is primarily based on my own personal details and information which have been displayed as a portfolio.
 
