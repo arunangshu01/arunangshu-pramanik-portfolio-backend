@@ -5,3 +5,4 @@ import model.base_models_education_details as base_models_education_details
 import model.base_models_experience as base_models_experience
 import model.base_models_awards_recognitions as base_models_awards_recognitions
 import model.base_models_errors as base_models_errors
+import model.base_models_send_contact_email as base_models_send_contact_email

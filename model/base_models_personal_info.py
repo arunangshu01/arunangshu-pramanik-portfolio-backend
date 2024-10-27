@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ValidationInfo, HttpUrl, field_validator
+from pydantic import BaseModel, ValidationInfo, HttpUrl, field_validator, EmailStr
 import re
 
 
@@ -25,7 +25,7 @@ class PersonalInformation(BaseModel):
     name: str
     phone: str
     location: Location
-    email: str
+    email: EmailStr
     social_media_profiles: SocialMediaProfiles
 
     @field_validator('name')
@@ -44,12 +44,4 @@ class PersonalInformation(BaseModel):
             raise ValueError(f"Invalid {field_info.field_name}.")
         return value
 
-    @field_validator('email')
-    @classmethod
-    def validate_email(cls, value: str, field_info: ValidationInfo) -> str:
-        email_pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-        email_match = re.match(email_pattern, value)
-        if not email_match:
-            raise ValueError(f'Invalid {field_info.field_name}.')
-        return value
 
