@@ -45,6 +45,5 @@ class SendContactEmail:
         await fast_mail.send_message(email_message)
 
     async def send_email(self):
-
-            await self._send_contact_email()
+        await self._send_contact_email()
 
