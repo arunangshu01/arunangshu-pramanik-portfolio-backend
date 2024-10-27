@@ -37,7 +37,7 @@ tags_metadata = [
     },
     {
         "name": "Drop Me A Message",
-        "description": "Send an EMail to me."
+        "description": "Send an Email to me."
     }
 ]
 
