@@ -4,3 +4,4 @@ import source.education_details_extract as education_details_extract
 import source.experience_extract as experience_extract
 import source.skills_extract as skills_extract
 import source.awards_recognitions_extract as awards_recognitions_extract
+import source.send_email_contact as send_email_contact

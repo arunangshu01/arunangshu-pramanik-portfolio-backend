@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 from routers import health_check, personal_info, profile_summary, skills, education_details, experience, \
-    awards_recognitions
+    awards_recognitions, send_email
 from utility.settings import API_COMMON_PREFIX, HOST, PORT, DEBUG_MODE
 
 tags_metadata = [
@@ -34,6 +34,10 @@ tags_metadata = [
     {
         "name": "Awards & Recognitions",
         "description": "Extract Awards & Recognitions"
+    },
+    {
+        "name": "Drop Me A Message",
+        "description": "Send an Email to me."
     }
 ]
 
@@ -54,6 +58,7 @@ app.include_router(education_details.router, prefix=API_COMMON_PREFIX)
 app.include_router(skills.router, prefix=API_COMMON_PREFIX)
 app.include_router(experience.router, prefix=API_COMMON_PREFIX)
 app.include_router(awards_recognitions.router, prefix=API_COMMON_PREFIX)
+app.include_router(send_email.router, prefix=API_COMMON_PREFIX)
 
 app.add_middleware(
     CORSMiddleware,
