@@ -7,7 +7,7 @@ from utility.logger import Logger
 
 logger = Logger(__name__)
 
-router = APIRouter(tags=["Send Email"])
+router = APIRouter(tags=["Drop Me A Message"])
 
 
 @router.post('/send_email', status_code=status.HTTP_201_CREATED)
@@ -16,11 +16,11 @@ async def send_email(background_tasks: BackgroundTasks, contact_form: ContactFor
         send_contact_email = SendContactEmail(
             sender_name=contact_form.name,
             sender_email=contact_form.email,
-            sender_subject=contact_form.subject,
             sender_content=contact_form.message
         )
         background_tasks.add_task(send_contact_email.send_email)
         success_message = f"Your message has been sent successfully."
+        logger.info(success_message)
         email_success = SendMessageSuccess(
             message=success_message
         )

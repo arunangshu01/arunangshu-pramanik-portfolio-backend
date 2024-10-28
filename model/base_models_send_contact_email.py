@@ -5,16 +5,14 @@ from fastapi import Form
 class ContactForm(BaseModel):
     name: str
     email: EmailStr
-    subject: str
     message: str
 
     @classmethod
     def as_form(cls,
                 name: str = Form(...),
                 email: EmailStr = Form(...),
-                subject: str = Form(...),
                 message: str = Form(...)):
-        return cls(name=name, email=email, subject=subject, message=message)
+        return cls(name=name, email=email, message=message)
 
 
 class SendMessageSuccess(BaseModel):
